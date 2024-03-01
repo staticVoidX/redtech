@@ -13,10 +13,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.staticvoid.redtech.RedtechKt::init"
+			"com.staticvoid.redtech.Redtech"
 		],
 		"client": [
-			"com.staticvoid.redtech.RedtechKt::initClient"
+			"com.staticvoid.redtech.client.RedtechClient"
 		]
 	},
 	"mixins": [
@@ -24,9 +24,8 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.15.0",
-		"minecraft": ">=1.20.5-alpha.24.9.a",
-		"java": ">=17",
-		"fabric-api": "*",
-		"fabric-language-kotlin": "~1.10.17+kotlin.1.9.22"
+		"minecraft": ">=1.20.6",
+		"java": ">=21",
+		"fabric-api": "*"
 	}
 }
