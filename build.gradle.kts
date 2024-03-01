@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm") version "1.9.22"
-    id("fabric-loom") version "1.4-SNAPSHOT"
+    id("fabric-loom") version "1.5-SNAPSHOT"
     `maven-publish`
 }
 
@@ -12,13 +12,14 @@ val yarn_mappings: String by project
 val loader_version: String by project
 val fabric_api_version: String by project
 val fabric_kotlin_version: String by project
+val modmenu_version: String by project
 
 version = mod_version
 group = maven_group
 base.archivesName = archives_base_name
 
 repositories {
-
+    maven("https://maven.terraformersmc.com/releases/")
 }
 
 dependencies {
@@ -28,6 +29,8 @@ dependencies {
 
     modImplementation("net.fabricmc.fabric-api:fabric-api:$fabric_api_version")
     modImplementation("net.fabricmc:fabric-language-kotlin:$fabric_kotlin_version")
+
+    modLocalRuntime("com.terraformersmc:modmenu:$modmenu_version")
 }
 
 tasks {
