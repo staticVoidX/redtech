@@ -1,5 +1,7 @@
 package com.staticvoid.redtech;
 
+import com.staticvoid.redtech.registry.RedtechBlocks;
+import com.staticvoid.redtech.registry.RedtechItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +16,9 @@ public class Redtech implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        RedtechBlocks.init();
+        RedtechItems.init();
+
         LOGGER.info("{} v{} has been initialized.", MOD_NAME, MOD_VERSION);
     }
 }
