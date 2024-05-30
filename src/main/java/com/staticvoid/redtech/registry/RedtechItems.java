@@ -9,8 +9,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.Function;
 
 @SuppressWarnings("unused")
@@ -22,7 +22,7 @@ public class RedtechItems {
     }
 
     private static <I extends Item> Map<DyeColor, I> register16Colors(String name, Function<DyeColor, I> factory) {
-        var items = new HashMap<DyeColor, I>();
+        var items = new TreeMap<DyeColor, I>();
 
         for (var color : DyeColor.values()) {
             items.put(color, register(color.getName().toLowerCase() + '_' + name, factory.apply(color)));

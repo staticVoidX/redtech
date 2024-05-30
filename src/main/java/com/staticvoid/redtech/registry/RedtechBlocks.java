@@ -9,8 +9,8 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.Function;
 
 @SuppressWarnings("unused")
@@ -21,7 +21,7 @@ public class RedtechBlocks {
     }
 
     private static <B extends Block> @NotNull Map<DyeColor, B> register16Colors(String name, Function<DyeColor, B> factory) {
-        var blocks = new HashMap<DyeColor, B>();
+        var blocks = new TreeMap<DyeColor, B>();
 
         for (var color : DyeColor.values()) {
             blocks.put(color, register(color.getName().toLowerCase() + '_' + name, factory.apply(color)));
