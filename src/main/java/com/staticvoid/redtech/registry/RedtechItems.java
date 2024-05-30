@@ -32,12 +32,12 @@ public class RedtechItems {
 
     private static <I extends Item> I register(String name, I item) {
 
-        return Registry.register(Registries.ITEM, new Identifier(Redtech.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, Identifier.of(Redtech.MOD_ID, name), item);
     }
 
     static {
         LED_BLOCKS = register16Colors("led", (color) -> new BlockItem(RedtechBlocks.LED_BLOCKS.get(color), new Item.Settings()));
-        ITEM_GROUP = Registry.register(Registries.ITEM_GROUP, new Identifier(Redtech.MOD_ID, "redtech"), FabricItemGroup.builder().icon(() -> new ItemStack(Items.REDSTONE)).displayName(Text.translatable("itemGroup.redtech.redtech")).entries((context, entries) -> {
+        ITEM_GROUP = Registry.register(Registries.ITEM_GROUP, Identifier.of(Redtech.MOD_ID, "redtech"), FabricItemGroup.builder().icon(() -> new ItemStack(Items.AIR)).displayName(Text.translatable("itemGroup.redtech.redtech")).entries((context, entries) -> {
             entries.add(LED_BLOCKS.get(DyeColor.WHITE));
             entries.add(LED_BLOCKS.get(DyeColor.LIGHT_GRAY));
             entries.add(LED_BLOCKS.get(DyeColor.GRAY));

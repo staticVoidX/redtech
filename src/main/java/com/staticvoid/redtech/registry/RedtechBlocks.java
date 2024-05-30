@@ -30,7 +30,7 @@ public class RedtechBlocks {
     }
 
     private static <B extends Block> B register(String name, B block) {
-        return Registry.register(Registries.BLOCK, new Identifier(Redtech.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(Redtech.MOD_ID, name), block);
     }
 
     static {
