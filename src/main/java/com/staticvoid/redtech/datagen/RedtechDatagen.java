@@ -9,5 +9,6 @@ public class RedtechDatagen implements DataGeneratorEntrypoint {
         var pack = fabricDataGenerator.createPack();
 
         pack.addProvider(RedtechBlockTagProvider::new);
+        pack.addProvider(RedtechLanguageProvider::new);
     }
 }
