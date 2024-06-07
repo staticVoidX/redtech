@@ -2,6 +2,7 @@ package com.staticvoid.redtech.registry;
 
 import com.staticvoid.redtech.Redtech;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -37,7 +38,7 @@ public class RedtechItems {
 
     static {
         LED_BLOCKS = register16Colors("led", (color) -> new BlockItem(RedtechBlocks.LED_BLOCKS.get(color), new Item.Settings()));
-        ITEM_GROUP = Registry.register(Registries.ITEM_GROUP, Identifier.of(Redtech.MOD_ID, "redtech"), FabricItemGroup.builder().icon(() -> new ItemStack(Items.AIR)).displayName(Text.translatable("itemGroup.redtech.redtech")).entries((context, entries) -> {
+        ITEM_GROUP = Registry.register(Registries.ITEM_GROUP, Identifier.of(Redtech.MOD_ID, "redtech"), FabricItemGroup.builder().icon(() -> new ItemStack(Blocks.REDSTONE_BLOCK)).displayName(Text.translatable("itemGroup.redtech.redtech")).entries((context, entries) -> {
             entries.add(LED_BLOCKS.get(DyeColor.WHITE));
             entries.add(LED_BLOCKS.get(DyeColor.LIGHT_GRAY));
             entries.add(LED_BLOCKS.get(DyeColor.GRAY));

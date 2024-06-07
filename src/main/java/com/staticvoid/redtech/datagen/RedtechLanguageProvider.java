@@ -31,5 +31,6 @@ public class RedtechLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(RedtechBlocks.LED_BLOCKS.get(DyeColor.GREEN), "Green LED");
         translationBuilder.add(RedtechBlocks.LED_BLOCKS.get(DyeColor.RED), "Red LED");
         translationBuilder.add(RedtechBlocks.LED_BLOCKS.get(DyeColor.BLACK), "Black LED");
+        translationBuilder.add("itemGroup.redtech.redtech", "Redtech");
     }
 }
